@@ -1,0 +1,132 @@
+# archi-k8s-importer configuration file
+
+# GLOBAL
+domain: null
+namespace: "default"
+cluster_url: null
+v1beta_ingress_api: false
+
+documentation_overwrite: false
+properties_overwrite: false
+
+# APPLICATIONS
+namespace_as_appname:
+  '^bookinfo.*$': 'BOOKINFO'
+  '^observability.*$': 'OBS-STACK'
+  '^kafka.*$': 'KAFKA'
+
+custom_component_name_to_app_names:
+  'DOMAIN':
+    'mongodb-myapp-.*$': 'myapp'
+
+app_names_with_domain_prefix:
+  - "KAFKA"
+  - "STACK-OBS"
+
+app_names_with_namespace_prefix:
+  - "HAZELCAST"
+  - "ZOOKEEPER"
+  - "FLUENT"
+
+app_name_replaces:
+  '^kafka-\w+-\d+-tools': 'DOMAIN-KAFKA'
+
+# Application components / pods
+pod_labels_for_component_prefix:
+  - 'app.kubernetes.io/instance'
+  - 'app.kubernetes.io/part-of'
+
+pod_label_for_component_suffix: 'app.kubernetes.io/component'
+unlabeled_pod_name_pattern: '^(\\D+-*\\D+)-\\w+.*$'
+
+app_component_name_pod_aliases:
+  '^([a-z]*-v\d*)-.*$': '(1)' # only "(1)" match group expression works for now
+  
+app_component_info_pod_labels:
+  "helm.sh/chart": "helm-chart"
+  "project": "rancher-project"
+  "version": "app-component-version"
+ 
+
+app_component_info_pod_annotations: {}
+  # "cni.projectcalico.org/podIPs": "pod-ips"
+  # "ClusterFWGroup": "network-group"
+
+app_component_info_pod_node_selectors:
+  "failure-domain.beta.kubernetes.io/region": "region"
+
+app_component_info_pod_tolerations:
+  - 'region'
+
+# Application components / PVC
+pvc_labels_for_component_prefix:
+  - 'app.kubernetes.io/instance'
+
+pvc_label_for_component_suffix: 'app.kubernetes.io/name'
+
+app_component_name_pvc_aliases:
+  'myapp-mongodb-mongodb-volume': 'myapp-mongodb-volume'
+
+pvc_name_last_suffix: "-volume"
+pvc_subfolder: true
+pvc_subfolder_suffix: "-volumes"
+
+# Application Components' Containers
+container_name_suffix: "-container"
+container_subfolder: true
+container_subfolder_suffix: "-containers"
+container_properties_resources_requests: false
+
+# Application Interfaces
+service_name_last_suffix: "-service"
+service_subfolder: true
+service_subfolder_suffix: "-services"
+
+app_interface_info_service_labels:
+  "app.kubernetes.io/name": "service_application"
+
+# TECHNOLOGY & PHYSICAL
+# Docker images
+docker_images_folder_name: "docker-images"
+docker_image_name_replaces:
+  'docker.io/acme-tools/': 'acme/'
+
+docker_image_subfolder: true
+
+# Cluster nodes
+k8s_clusters_folder_name: "k8s-clusters"
+k8s_clusters_aliases:
+  '127.0.0.1:6443': 'Desktop/rancher-desktop'
+  'c-m-tnwnxjh4': 'PrivateCloud/staging-1/staging-1'
+
+k8s_clusters_subfolder: true
+k8s_clusters_name_suffix: "-k8s-cluster"
+
+# Service Nodes
+service_nodes_subfolder_name: "nodes"
+service_node_label_for_service_name:
+  - 'app.kubernetes.io/instance'
+
+generated_service_node_types_suffix:
+  "LoadBalancer": "-lb"
+  "NodePort": "-node-port"
+
+node_info_service_annotations:
+  'loadbalancer.openstack.org/load-balancer-address': 'load_balancer_ip'
+  'loadbalancer.openstack.org/class': 'load_balancer_class'
+  'external-dns.alpha.kubernetes.io/hostname': 'hostname'
+
+# Ingresses
+ingress_subfolder_name: "ingresses"
+tech_interface_info_ingress_annotations:
+  'field.cattle.io/publicEndpoints': 'endpoint'
+
+ingress_label_for_interface_name:
+  - 'app.kubernetes.io/instance'
+
+ingress_name_suffix: "-ingress"
+field_cattle_io_publicEndpoints_subparts:
+  - 'port'
+  - 'protocol'
+  - 'path'
+  - 'hostname'

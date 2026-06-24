@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="JavaTestGeneration" id="id-f8627669e97b4482b75299e6429e8598" version="5.0.0">
+  <folder name="Strategy" id="id-5eac00d4aeff450fa86585038d828956" type="strategy"/>
+  <folder name="Business" id="id-697078d278634ac3baed65e1c70e873f" type="business"/>
+  <folder name="Application" id="id-ced1638c55a940349f84c5eff430d1ac" type="application">
+    <folder name="_TEST_CONTROL" id="id-2c876744acf5474883d20cc62fecf4cb">
+      <folder name="BOOKINFO" id="id-1635854742d8410d8170e6a472a8a113">
+        <folder name="reviews-v1-containers" id="id-51ad56b99b484dc6a14e3e343613bf71">
+          <element xsi:type="archimate:ApplicationComponent" name="reviews-container" id="id-f083799fdab34bd19886ca78454aa761">
+            <property key="component_type" value="docker-container"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-reviews-v1"/>
+            <property key="ports" value="[unnamed:9080]"/>
+            <property key="image_version" value="1.16.4"/>
+          </element>
+        </folder>
+        <folder name="reviews-v2-containers" id="id-160f002da0ec4262849b2060f038c307">
+          <element xsi:type="archimate:ApplicationComponent" name="reviews-container" id="id-10fa1c8bf0ac43b6a714fddbc550cba2">
+            <property key="component_type" value="docker-container"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-reviews-v2"/>
+            <property key="ports" value="[unnamed:9080]"/>
+            <property key="image_version" value="1.16.4"/>
+          </element>
+        </folder>
+        <folder name="reviews-v3-containers" id="id-27b25d16c44a4048a95149edc163a393">
+          <element xsi:type="archimate:ApplicationComponent" name="reviews-container" id="id-63722c3165fd413385800339beb25b66">
+            <property key="component_type" value="docker-container"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-reviews-v3"/>
+            <property key="ports" value="[unnamed:9080]"/>
+            <property key="image_version" value="1.16.4"/>
+          </element>
+        </folder>
+        <folder name="ratings-v1-containers" id="id-84b2cad0506848318576b21a38a61079">
+          <element xsi:type="archimate:ApplicationComponent" name="ratings-container" id="id-6338677f195f44e8b04531ffb0e8392e">
+            <property key="component_type" value="docker-container"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-ratings-v1"/>
+            <property key="ports" value="[unnamed:9080]"/>
+            <property key="image_version" value="1.16.4"/>
+          </element>
+        </folder>
+        <folder name="productpage-v1-containers" id="id-8d64d8476e5d46e48226ea51e3b0a81b">
+          <element xsi:type="archimate:ApplicationComponent" name="productpage-container" id="id-4ae3e1158e0a45d1aa3f05ede37f3afb">
+            <property key="component_type" value="docker-container"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-productpage-v1"/>
+            <property key="ports" value="[unnamed:9080]"/>
+            <property key="image_version" value="1.16.4"/>
+          </element>
+        </folder>
+        <folder name="details-v1-containers" id="id-cf9b6972f6af402d8e5f8e429bda754c">
+          <element xsi:type="archimate:ApplicationComponent" name="details-container" id="id-2ba5234223544b17a663fbc1b55dd777">
+            <property key="component_type" value="docker-container"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-details-v1"/>
+            <property key="ports" value="[unnamed:9080]"/>
+            <property key="image_version" value="1.16.4"/>
+          </element>
+        </folder>
+        <folder name="details-v1-services" id="id-1babc28b4c2444c2926c55ed57f1f003">
+          <element xsi:type="archimate:ApplicationInterface" name="details-v1-http-service" id="id-6b93d98c63264ddc9b686aaba4e2780e">
+            <property key="protocol" value="TCP"/>
+            <property key="service_name" value="details"/>
+            <property key="interface_type" value="kubernetes-service"/>
+            <property key="service_port_name" value="http"/>
+            <property key="service_port" value="9080"/>
+          </element>
+        </folder>
+        <folder name="productpage-v1-services" id="id-2f44bb07a05d4815b540faee98cff588">
+          <element xsi:type="archimate:ApplicationInterface" name="productpage-v1-http-service" id="id-21abf3426c2546aeaa61c88366aaf97c">
+            <property key="protocol" value="TCP"/>
+            <property key="service_name" value="productpage"/>
+            <property key="interface_type" value="kubernetes-service"/>
+            <property key="service_port_name" value="http"/>
+            <property key="service_port" value="9080"/>
+          </element>
+        </folder>
+        <folder name="ratings-v1-services" id="id-a7840867c81f4bc88400cd854a9e8f52">
+          <element xsi:type="archimate:ApplicationInterface" name="ratings-v1-http-service" id="id-86b6c4000e20483a8108371461d1f2f8">
+            <property key="protocol" value="TCP"/>
+            <property key="service_name" value="ratings"/>
+            <property key="interface_type" value="kubernetes-service"/>
+            <property key="service_port_name" value="http"/>
+            <property key="service_port" value="9080"/>
+          </element>
+        </folder>
+        <folder name="reviews-v1-services" id="id-6bb9b6f5d3914b278ccdb3d31c426c9a">
+          <element xsi:type="archimate:ApplicationInterface" name="reviews-v1-http-service" id="id-e134be9edfa14033bc6aae4cc662af35">
+            <property key="protocol" value="TCP"/>
+            <property key="service_name" value="reviews"/>
+            <property key="interface_type" value="kubernetes-service"/>
+            <property key="service_port_name" value="http"/>
+            <property key="service_port" value="9080"/>
+          </element>
+        </folder>
+        <element xsi:type="archimate:ApplicationComponent" name="BOOKINFO" id="id-3b1c1180d7344aa3acd6d5e2b54f0ab3">
+          <property key="component_type" value="application"/>
+          <property key="generation_date" value="2026-03-31"/>
+          <property key="generation_namespace" value="bookinfo"/>
+        </element>
+        <element xsi:type="archimate:ApplicationComponent" name="reviews-v1" id="id-68124f2238d540e28a0f8c898cfed390">
+          <property key="component_type" value="kubernetes-workload"/>
+          <property key="generation_date" value="2026-03-31"/>
+          <property key="generation_namespace" value="bookinfo"/>
+          <property key="replicates" value="1"/>
+          <property key="volume_claims" value="[]"/>
+          <property key="app-component-version" value="v1"/>
+        </element>
+        <element xsi:type="archimate:ApplicationComponent" name="reviews-v2" id="id-2917229c493d4503aaa083768bf2f8fe">
+          <property key="component_type" value="kubernetes-workload"/>
+          <property key="generation_date" value="2026-03-31"/>
+          <property key="generation_namespace" value="bookinfo"/>
+          <property key="replicates" value="1"/>
+          <property key="volume_claims" value="[]"/>
+          <property key="app-component-version" value="v2"/>
+        </element>
+        <element xsi:type="archimate:ApplicationComponent" name="reviews-v3" id="id-1d1e0824214546f09e07298dfa3497d7">
+          <property key="component_type" value="kubernetes-workload"/>
+          <property key="generation_date" value="2026-03-31"/>
+          <property key="generation_namespace" value="bookinfo"/>
+          <property key="replicates" value="1"/>
+          <property key="volume_claims" value="[]"/>
+          <property key="app-component-version" value="v3"/>
+        </element>
+        <element xsi:type="archimate:ApplicationComponent" name="ratings-v1" id="id-6d6db44df0664f499d63f81f76742baf">
+          <property key="component_type" value="kubernetes-workload"/>
+          <property key="generation_date" value="2026-03-31"/>
+          <property key="generation_namespace" value="bookinfo"/>
+          <property key="replicates" value="1"/>
+          <property key="volume_claims" value="[]"/>
+          <property key="app-component-version" value="v1"/>
+        </element>
+        <element xsi:type="archimate:ApplicationComponent" name="productpage-v1" id="id-9484421341184cf2a2e418381120efa4">
+          <property key="component_type" value="kubernetes-workload"/>
+          <property key="generation_date" value="2026-03-31"/>
+          <property key="generation_namespace" value="bookinfo"/>
+          <property key="replicates" value="1"/>
+          <property key="volume_claims" value="[]"/>
+          <property key="app-component-version" value="v1"/>
+        </element>
+        <element xsi:type="archimate:ApplicationComponent" name="details-v1" id="id-be740dd09a2840d4a109db5b9ebcbaff">
+          <property key="component_type" value="kubernetes-workload"/>
+          <property key="generation_date" value="2026-03-31"/>
+          <property key="generation_namespace" value="bookinfo"/>
+          <property key="replicates" value="1"/>
+          <property key="volume_claims" value="[]"/>
+          <property key="app-component-version" value="v1"/>
+        </element>
+      </folder>
+    </folder>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-7e96bc3fa2c9433a9489ff3deecf6c14" type="technology">
+    <folder name="k8s-clusters" id="id-50fabd622cd042789544665d5a3b9cfc">
+      <folder name="Desktop" id="id-d1f4e07984b14d9cab0e3a1b5d7f9e86">
+        <element xsi:type="archimate:Node" name="rancher-desktop-k8s-cluster" id="id-393e6c191a2f44d194c8cc5930a0274c">
+          <property key="node_type" value="kubernetes-cluster"/>
+          <property key="uri" value="https://127.0.0.1:6443"/>
+        </element>
+      </folder>
+    </folder>
+    <folder name="docker-images" id="id-1dbb9cc4878d4220ab14a4385b8c91e9">
+      <folder name="docker.io" id="id-711b8b5cc47f4dcda9b5f2f6d2b376ce">
+        <folder name="istio" id="id-c81c787cd29941fb8b4ac98e96ee9c68">
+          <element xsi:type="archimate:Artifact" name="docker.io/istio/examples-bookinfo-reviews-v1_1.16" id="id-48ceb3da640b45f88df124ba7ff6831f">
+            <property key="artifact_type" value="docker-image"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-reviews-v1"/>
+            <property key="image_version" value="1.16"/>
+            <property key="generation_date" value="2026-03-31"/>
+            <property key="generation_namespace" value="bookinfo"/>
+          </element>
+          <element xsi:type="archimate:Artifact" name="docker.io/istio/examples-bookinfo-reviews-v2_1.16" id="id-b5161239eb544b6a806a7e34d5287cbd">
+            <property key="artifact_type" value="docker-image"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-reviews-v2"/>
+            <property key="image_version" value="1.16"/>
+            <property key="generation_date" value="2026-03-31"/>
+            <property key="generation_namespace" value="bookinfo"/>
+          </element>
+          <element xsi:type="archimate:Artifact" name="docker.io/istio/examples-bookinfo-reviews-v3_1.16" id="id-164af7f2c922465685fc026958efd042">
+            <property key="artifact_type" value="docker-image"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-reviews-v3"/>
+            <property key="image_version" value="1.16"/>
+            <property key="generation_date" value="2026-03-31"/>
+            <property key="generation_namespace" value="bookinfo"/>
+          </element>
+          <element xsi:type="archimate:Artifact" name="docker.io/istio/examples-bookinfo-ratings-v1_1.16" id="id-a45a222c3b00420ca831e01f203dca30">
+            <property key="artifact_type" value="docker-image"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-ratings-v1"/>
+            <property key="image_version" value="1.16"/>
+            <property key="generation_date" value="2026-03-31"/>
+            <property key="generation_namespace" value="bookinfo"/>
+          </element>
+          <element xsi:type="archimate:Artifact" name="docker.io/istio/examples-bookinfo-productpage-v1_1.16" id="id-a494cf046b0c43829f1105be5ecf6773">
+            <property key="artifact_type" value="docker-image"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-productpage-v1"/>
+            <property key="image_version" value="1.16"/>
+            <property key="generation_date" value="2026-03-31"/>
+            <property key="generation_namespace" value="bookinfo"/>
+          </element>
+          <element xsi:type="archimate:Artifact" name="docker.io/istio/examples-bookinfo-details-v1_1.16" id="id-b8751e01bc8d4bbe92a1433243a7f2c5">
+            <property key="artifact_type" value="docker-image"/>
+            <property key="image_name" value="docker.io/istio/examples-bookinfo-details-v1"/>
+            <property key="image_version" value="1.16"/>
+            <property key="generation_date" value="2026-03-31"/>
+            <property key="generation_namespace" value="bookinfo"/>
+          </element>
+        </folder>
+      </folder>
+    </folder>
+  </folder>
+  <folder name="Motivation" id="id-bcd07ebb5ee847758b07c0a392c3e1b2" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-6612fc5feb114b7580126be11cd8e610" type="implementation_migration"/>
+  <folder name="Other" id="id-81dea9ef1a9a4d599a19835dc643a9df" type="other"/>
+  <folder name="Relations" id="id-1571d828e11f4f96a2e18d34384326a6" type="relations">
+    <element xsi:type="archimate:CompositionRelationship" id="id-64263e535c0948c08df03643a24b854c" source="id-3b1c1180d7344aa3acd6d5e2b54f0ab3" target="id-68124f2238d540e28a0f8c898cfed390"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-7c8be607957e4722a45e4cad2e941559" source="id-393e6c191a2f44d194c8cc5930a0274c" target="id-68124f2238d540e28a0f8c898cfed390"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-880e9747bf5b46a78c66e169ed80b33c" source="id-68124f2238d540e28a0f8c898cfed390" target="id-f083799fdab34bd19886ca78454aa761"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f4c1bbe47f7b4900867eefc1f1dd893c" source="id-f083799fdab34bd19886ca78454aa761" target="id-48ceb3da640b45f88df124ba7ff6831f"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-ff918d436b744f5cb19fc6ca42d42873" source="id-3b1c1180d7344aa3acd6d5e2b54f0ab3" target="id-2917229c493d4503aaa083768bf2f8fe"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-65f1532573e840058f317819d41cd3ab" source="id-393e6c191a2f44d194c8cc5930a0274c" target="id-2917229c493d4503aaa083768bf2f8fe"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-2e75c883d19844209e2644cff297809c" source="id-2917229c493d4503aaa083768bf2f8fe" target="id-10fa1c8bf0ac43b6a714fddbc550cba2"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-d0aa991f9aae4ecba92e17d6a748f707" source="id-10fa1c8bf0ac43b6a714fddbc550cba2" target="id-b5161239eb544b6a806a7e34d5287cbd"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-3c6534f0798a41ada477dded8af8615e" source="id-3b1c1180d7344aa3acd6d5e2b54f0ab3" target="id-1d1e0824214546f09e07298dfa3497d7"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-114ccd97a42e4bc99b5d5b1bf048d6ea" source="id-393e6c191a2f44d194c8cc5930a0274c" target="id-1d1e0824214546f09e07298dfa3497d7"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-3270aed7b8124203b001a3e9b3c916f9" source="id-1d1e0824214546f09e07298dfa3497d7" target="id-63722c3165fd413385800339beb25b66"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-86f09dfedb284d13bba4e3b30103eaa0" source="id-63722c3165fd413385800339beb25b66" target="id-164af7f2c922465685fc026958efd042"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-bf8ec0ea689446078c1114f95d9604d6" source="id-3b1c1180d7344aa3acd6d5e2b54f0ab3" target="id-6d6db44df0664f499d63f81f76742baf"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-fa7046d8e8ed4fde958426dec0eba712" source="id-393e6c191a2f44d194c8cc5930a0274c" target="id-6d6db44df0664f499d63f81f76742baf"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f6eb47d0b3fb4500b190bb4558cc21f7" source="id-6d6db44df0664f499d63f81f76742baf" target="id-6338677f195f44e8b04531ffb0e8392e"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-145776c310ea4b37b1e4d3f009f4a82f" source="id-6338677f195f44e8b04531ffb0e8392e" target="id-a45a222c3b00420ca831e01f203dca30"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-130946e4000c4b68a7e8f9cc6c937e1d" source="id-3b1c1180d7344aa3acd6d5e2b54f0ab3" target="id-9484421341184cf2a2e418381120efa4"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-91719286c4384204a3186912f9673705" source="id-393e6c191a2f44d194c8cc5930a0274c" target="id-9484421341184cf2a2e418381120efa4"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-04ded737ef984ff5a3a1c5a334ce9781" source="id-9484421341184cf2a2e418381120efa4" target="id-4ae3e1158e0a45d1aa3f05ede37f3afb"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-30c4abd630874a8d9e6b8ba7ae552664" source="id-4ae3e1158e0a45d1aa3f05ede37f3afb" target="id-a494cf046b0c43829f1105be5ecf6773"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-af8b5564573e494f9775cb0b3cf39f29" source="id-3b1c1180d7344aa3acd6d5e2b54f0ab3" target="id-be740dd09a2840d4a109db5b9ebcbaff"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-86ad4da9d9b740619f6f69f519c9a391" source="id-393e6c191a2f44d194c8cc5930a0274c" target="id-be740dd09a2840d4a109db5b9ebcbaff"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-83cae4ae49bb4aedb357d2a690d5eb62" source="id-be740dd09a2840d4a109db5b9ebcbaff" target="id-2ba5234223544b17a663fbc1b55dd777"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-96968d5385184962b66b4d5e55402ac5" source="id-2ba5234223544b17a663fbc1b55dd777" target="id-b8751e01bc8d4bbe92a1433243a7f2c5"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-091bd1bda77c4e08ad78d28caf15bcca" source="id-be740dd09a2840d4a109db5b9ebcbaff" target="id-6b93d98c63264ddc9b686aaba4e2780e"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-0fd1ae51730849d0bf67980c277f15b5" source="id-6b93d98c63264ddc9b686aaba4e2780e" target="id-2ba5234223544b17a663fbc1b55dd777"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-c8819181daf04260b1ba701a24dafdae" source="id-9484421341184cf2a2e418381120efa4" target="id-21abf3426c2546aeaa61c88366aaf97c"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-9784a87552014265a7654840bd4e91ad" source="id-21abf3426c2546aeaa61c88366aaf97c" target="id-4ae3e1158e0a45d1aa3f05ede37f3afb"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-784510cc3d774a91b96150a298a2e4be" source="id-6d6db44df0664f499d63f81f76742baf" target="id-86b6c4000e20483a8108371461d1f2f8"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-fb5446746d064461af9ea93ea4a5016d" source="id-86b6c4000e20483a8108371461d1f2f8" target="id-6338677f195f44e8b04531ffb0e8392e"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-41da25b806da4293ab24a57cc1f0e04c" source="id-68124f2238d540e28a0f8c898cfed390" target="id-e134be9edfa14033bc6aae4cc662af35"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-ad46340ea15449b091516b70bd2b7f21" source="id-e134be9edfa14033bc6aae4cc662af35" target="id-f083799fdab34bd19886ca78454aa761"/>
+  </folder>
+  <folder name="Views" id="id-4a706d4863ab448a82c29e6186a2edc2" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Generated View for BOOKINFO" id="id-0010a5711ec3412aad7cdfa1ef8eb899">
+      <child xsi:type="archimate:DiagramObject" id="id-b2db769fb7c1444ea579dc3087742c21" archimateElement="id-3b1c1180d7344aa3acd6d5e2b54f0ab3">
+        <bounds x="20" y="20" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-dc477d38be98420aaaa5a2cdbecd7334" source="id-b2db769fb7c1444ea579dc3087742c21" target="id-52430f812f5440f09717a1cc22f286bb" archimateRelationship="id-64263e535c0948c08df03643a24b854c"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-6903743bf51b470fb6fca79648bb34b0" source="id-b2db769fb7c1444ea579dc3087742c21" target="id-127e573ca0344fab81aa723ea101211e" archimateRelationship="id-ff918d436b744f5cb19fc6ca42d42873"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-ee114e38eac44696a74b6b58a2b35ef7" source="id-b2db769fb7c1444ea579dc3087742c21" target="id-c97b98fdf067479f8aa46df4afe699f2" archimateRelationship="id-3c6534f0798a41ada477dded8af8615e"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-fd57da8c15f945ddae95b5a2f48747ae" source="id-b2db769fb7c1444ea579dc3087742c21" target="id-d19d854313e14c0db7f80f34e4c2d6f6" archimateRelationship="id-bf8ec0ea689446078c1114f95d9604d6"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-e2a6a4b64f314499bc134efe8e593631" source="id-b2db769fb7c1444ea579dc3087742c21" target="id-e542b8e83f884822aba570521748d3e8" archimateRelationship="id-130946e4000c4b68a7e8f9cc6c937e1d"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-1e9f71b6ec664480b5be68ac45d231c4" source="id-b2db769fb7c1444ea579dc3087742c21" target="id-b057c76efba3421a95c5bf477cf6b596" archimateRelationship="id-af8b5564573e494f9775cb0b3cf39f29"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-52430f812f5440f09717a1cc22f286bb" targetConnections="id-dc477d38be98420aaaa5a2cdbecd7334" archimateElement="id-68124f2238d540e28a0f8c898cfed390">
+        <bounds x="170" y="20" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-127e573ca0344fab81aa723ea101211e" targetConnections="id-6903743bf51b470fb6fca79648bb34b0" archimateElement="id-2917229c493d4503aaa083768bf2f8fe">
+        <bounds x="170" y="100" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-c97b98fdf067479f8aa46df4afe699f2" targetConnections="id-ee114e38eac44696a74b6b58a2b35ef7" archimateElement="id-1d1e0824214546f09e07298dfa3497d7">
+        <bounds x="170" y="180" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-d19d854313e14c0db7f80f34e4c2d6f6" targetConnections="id-fd57da8c15f945ddae95b5a2f48747ae" archimateElement="id-6d6db44df0664f499d63f81f76742baf">
+        <bounds x="170" y="260" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-e542b8e83f884822aba570521748d3e8" targetConnections="id-e2a6a4b64f314499bc134efe8e593631" archimateElement="id-9484421341184cf2a2e418381120efa4">
+        <bounds x="170" y="340" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-b057c76efba3421a95c5bf477cf6b596" targetConnections="id-1e9f71b6ec664480b5be68ac45d231c4" archimateElement="id-be740dd09a2840d4a109db5b9ebcbaff">
+        <bounds x="170" y="420" width="120" height="55"/>
+      </child>
+    </element>
+  </folder>
+</archimate:model>

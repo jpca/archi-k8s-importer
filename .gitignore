@@ -1,0 +1,4 @@
+/bin
+src/test/resources/test.archimate.bak
+target/*classes
+

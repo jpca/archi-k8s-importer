@@ -1,0 +1,38 @@
+--- 
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: k8s-archi-converter-forward-role
+rules:
+- apiGroups: [""]
+  resources: ["pods","services","pvc","ingresses"]
+  verbs: ["get","list"]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    k8s-app: k8s-archi-converter
+  name: k8s-archi-converter-sa
+  namespace: default
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: k8s-archi-converter-clusterrole
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: k8s-archi-converter-forward-role
+subjects:
+- kind: ServiceAccount
+  name: k8s-archi-converter-sa
+  namespace: default
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: k8s-archi-converter-secret
+  annotations:
+    kubernetes.io/service-account.name: k8s-archi-converter
+type: kubernetes.io/service-account-token
