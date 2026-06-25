@@ -10,7 +10,7 @@ Each contribution must have :
 - a minimum of commits with a meaningfull message (use git squash on the branch before the PR)
 - an automated test to check the contribution
 
-IA use is allowed if the human author masters the PR content
+AI is allowed if the human author masters the PR content
 
 A code maintainer can refuse any contribution, with justifiable response to the contributor. 
 

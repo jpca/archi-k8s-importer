@@ -13,11 +13,15 @@ Requires Archi 5.7 or later, tested with Kubernetes v1.28.11 or later
 
 ## Setup
 
-Download the Archi plug-in zip file from the download page
+Download the latest k8s importer plug-in jar file from the [releases](https://github.com/jpca/archi-k8s-importer/releases) page
+
 Close Archi if it is open
+
 Copy the plug-in to Archi's "dropins" folder (if this does not exist you will need to create it)
+
 Relaunch Archi
-After relaunching Archi, the plug-in will be available in Archi.
+
+After relaunching Archi, the plug-in will be listed in Archi from menu Help - Manage Plug-ins...
 
 Note: The default "dropins" folder is located in the following file locations:
 
